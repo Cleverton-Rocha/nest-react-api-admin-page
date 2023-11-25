@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import { RequireAuth } from '../../RequireAuth';
 
 function Home() {
+
+  RequireAuth();
+
   return (
     <>
       <Header/>
@@ -18,8 +22,6 @@ function Home() {
           <span className='mt-5 text-sm font-medium'>Manage the users.</span>
           <Link to='/users' className='mt-5 w-44 bg-blue-500 hover:bg-blue-600 transition duration-150 text-white font-medium rounded-sm text-center'>Go</Link>
         </div>
-
-        
 
       </div>
     </>
