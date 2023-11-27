@@ -86,7 +86,7 @@ function Login() {
           </div>
 
           <div className="flex justify-center mt-6 text-white font-semibold">
-            <button type='submit' className='w-full p-2 rounded-sm bg-blue-500 hover:bg-blue-600 transition duration-150'>{loading ? ('Loading...') : ('Login')}</button>
+            <button type='submit' className='w-full p-2 rounded-sm bg-blue-500 hover:bg-blue-600 transition duration-150'>{loading ? 'Loading...' : 'Login'}</button>
           </div>
 
         </form>
