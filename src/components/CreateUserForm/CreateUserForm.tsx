@@ -19,7 +19,7 @@ function CreateUserForm() {
 
   const handleCreate = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     const token = Cookies.get('token');
     const apiURL = 'https://ecommerce-api-nest.vercel.app/user/create';
 
@@ -34,10 +34,15 @@ function CreateUserForm() {
         body: JSON.stringify({ name, email, password })
       });
 
+      if (!response.ok) {
+        const data = await response.json();
+        window.alert(data.message);
+      }
+
       if (response.ok) {
         const data = await response.json();
 
-        if(data.error){
+        if (data.error) {
           return window.alert(data.error);
         }
 
@@ -52,24 +57,24 @@ function CreateUserForm() {
 
 
   return (
-    
+
 
     <div className="flex justify-center mt-24">
       <form className='w-72' onSubmit={handleCreate}>
 
         <div className="flex flex-col mt-4">
           <label className='text-sm font-semibold' htmlFor="Name">Name</label>
-          <input className='p-2 text-sm border outline-blue-400' type="text" placeholder='Your name' value={name} onChange={handleNameChange}/>
+          <input className='p-2 text-sm border outline-blue-400' type="text" placeholder='Your name' value={name} onChange={handleNameChange} />
         </div>
 
         <div className="flex flex-col mt-4">
           <label className='text-sm font-semibold' htmlFor="Email">Email</label>
-          <input className='p-2 text-sm border outline-blue-400' type="text" placeholder='Ex:email@email.com' value={email} onChange={handleEmailChange}/>
+          <input className='p-2 text-sm border outline-blue-400' type="text" placeholder='Ex:email@email.com' value={email} onChange={handleEmailChange} />
         </div>
 
         <div className="flex flex-col mt-4">
           <label className='text-sm font-semibold' htmlFor="Password">Password</label>
-          <input className='p-2 text-sm border outline-blue-400' type="password" placeholder='Your password' value={password} onChange={handlePasswordChange}/>
+          <input className='p-2 text-sm border outline-blue-400' type="password" placeholder='Your password' value={password} onChange={handlePasswordChange} />
           <div className='flex flex-col p-1 text-xs font-semibold text-red-500'>
             <span>Your password must contain:</span>
             <span>1 - Four or more characters.</span>
