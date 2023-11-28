@@ -25,7 +25,6 @@ function Users() {
     setCreating(false);
   };
 
-
   const fetchUsers = () => {
     const token = Cookies.get('token');
     const apiURL = 'https://ecommerce-api-nest.vercel.app/user/all';
@@ -46,10 +45,6 @@ function Users() {
         setLoading(false);
         setUser(users);
       });
-  };
-
-  const refreshUsers = () => {
-    fetchUsers();
   };
 
   useEffect(() => {
@@ -86,12 +81,12 @@ function Users() {
             </div>
           ) : (
             <>
-              <table className="mx-auto w-3/6 bg-white border border-gray-300 mt-20">
+              <table className="mx-auto text-center w-3/6 bg-white border border-gray-300 mt-20">
                 <thead className="bg-gray-200">
                   <tr className='border-b-2'>
-                    <th className="py-2 px-4 text-center">ID</th>
-                    <th className="py-2 px-4 text-center">Name</th>
-                    <th className="py-2 px-4 text-center">Email</th>
+                    <th className="py-2 px-4">ID</th>
+                    <th className="py-2 px-4">Name</th>
+                    <th className="py-2 px-4">Email</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -101,11 +96,11 @@ function Users() {
                       id={user.id}
                       name={user.name}
                       email={user.email}
+                      afterChange={fetchUsers}
                     />
                   ))}
                 </tbody>
               </table>
-              <button onClick={refreshUsers} className='flex justify-center mx-auto w-48 p-1 mt-4 font-semibold text-white rounded-sm bg-green-600 hover:bg-green-700 transition duration-150'>Refresh</button>
             </>
           )}
       </div>
