@@ -110,7 +110,6 @@ function UserTable(props: UserTableProps) {
     const token = Cookies.get('token');
     const apiURL = `https://ecommerce-api-nest.vercel.app/user/update/${props.id}`;
 
-
     try {
 
       const response = await fetch(apiURL, {
@@ -196,6 +195,10 @@ function UserTable(props: UserTableProps) {
               </button>
             </>
           )}
+      </td>
+
+      <td className='font-bold'>
+        <span>*****</span>
       </td>
 
       <td>
