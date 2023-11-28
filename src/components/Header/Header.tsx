@@ -21,12 +21,12 @@ function Header() {
   return (
     <div className="flex justify-around w-full h-28 shadow-lg">
 
-      <Link to='/home' className='flex items-center font-medium text-3xl'>Ecommerce API</Link>
+      <Link to='/home' className='flex items-center font-medium text-sm md:text-3xl'>Ecommerce API</Link>
       
-      <ul className='flex items-center font-medium text-xl gap-10'>
+      <ul className='flex items-center font-medium text-sm md:text-xl gap-5 md:gap-10'>
         <li><Link to='/products' className='border-b-2 hover:border-b-blue-500 transition duration-150'>Products</Link></li>
         <li><Link to='/users' className='border-b-2 hover:border-b-blue-500 transition duration-150'>Users</Link></li>
-        <Link onClick={handleLogout} to='/' className='hover:text-blue-800 transition duration-150 mt-1'><MdLogout size={22} /></Link>
+        <Link onClick={handleLogout} to='/' className='hover:text-blue-800 transition duration-150 mt-1'><MdLogout className='w-4 h-4 md:w-5 md:h-5' /></Link>
       </ul>
       
     </div>
