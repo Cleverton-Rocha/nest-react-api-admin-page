@@ -60,7 +60,7 @@ function CreateUserForm() {
 
 
     <div className="flex justify-center mt-24">
-      <form className='w-72' onSubmit={handleCreate}>
+      <form className='w-52 md:w-72' onSubmit={handleCreate}>
 
         <div className="flex flex-col mt-4">
           <label className='text-sm font-semibold' htmlFor="Name">Name</label>

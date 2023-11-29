@@ -85,14 +85,14 @@ function Users() {
         {creating ? (
           <>
             <CreateUserForm />
-            <button onClick={hideCreateForm} className='flex justify-center mx-auto w-72 p-1 mt-4 font-semibold text-white rounded-sm bg-red-500 hover:bg-red-600 transition duration-150'>Close</button>
+            <button onClick={hideCreateForm} className='flex justify-center mx-auto w-52 md:w-72 p-1 mt-4 font-semibold text-white rounded-sm bg-red-500 hover:bg-red-600 transition duration-150'>Close</button>
           </>
         ) :
 
           editingPassword ? (
             <>
               <EditPasswordForm />
-              <button onClick={hideEditPasswordForm} className='flex justify-center mx-auto w-72 p-1 mt-4 font-semibold text-white rounded-sm bg-red-500 hover:bg-red-600 transition duration-150'>Close</button>
+              <button onClick={hideEditPasswordForm} className='flex justify-center mx-auto w-52 md:w-72 p-1 mt-4 font-semibold text-white rounded-sm bg-red-500 hover:bg-red-600 transition duration-150'>Close</button>
             </>
           ) :
             loading ? (

@@ -159,11 +159,11 @@ function UserTable(props: UserTableProps) {
     <tr className='text-xs md:text-lg'>
       <td className=''>{props.id}</td>
 
-      <td className='flex flex-col items-center py-6 px-7 md:py-2 md:px-0 md:block'>
+      <td className='flex flex-col items-center py-4 px-7 md:py-2 md:px-0 md:block'>
         {editingName ? (
           <>
             <form onSubmit={handleEditName}>
-              <input type='text' value={name} onChange={handleNameChange} className='border border-gray-300 w-24 md:w-full px-2 md:py-1  outline-none' />
+              <input type='text' value={name} onChange={handleNameChange} className='border border-gray-300 w-24 px-2 md:py-1  outline-none' />
               <button type='submit' className='text-blue-500 hover:text-blue-600 transition duration-150'><MdCheckCircle className='-mb-1 mx-1 w-4 h-4 md:w-5 md:h-5' /></button>
               <button onClick={handleCancelClickEditName} className='text-blue-500 hover:text-blue-600 transition duration-150'><MdCancel className='-mb-1 w-4 h-4 md:w-5 md:h-5' /></button>
             </form>
@@ -182,7 +182,7 @@ function UserTable(props: UserTableProps) {
         {editingEmail ? (
           <>
             <form onSubmit={handleEditEmail}>
-              <input type='text' value={email} onChange={handleEmailChange} className='border border-gray-300 w-32 px-2 md:py-1 outline-none' />
+              <input type='text' value={email} onChange={handleEmailChange} className='border border-gray-300 w-32 md:w-48 px-2 md:py-1 outline-none' />
               <button type='submit' className='text-blue-500 hover:text-blue-600 transition duration-150'><MdCheckCircle className='-mb-1 mx-1 w-4 h-4 md:w-5 md:h-5' /></button>
               <button onClick={handleCancelClickEditEmail} className='text-blue-500 hover:text-blue-600 transition duration-150'><MdCancel className='-mb-1 w-4 h-4 md:w-5 md:h-5' /></button>
             </form>
@@ -206,7 +206,7 @@ function UserTable(props: UserTableProps) {
       <td>
         {confirmDelete ?
           <>
-            <div className='flex items-center mb-5 md:block'>
+            <div className='flex items-center mb-5 md:mb-0 md:block'>
               <button onClick={handleDelete} className='text-red-500 hover:text-red-600 transition duration-150'><MdCheckCircle className='w-4 h-4 md:w-5 md:h-5' /></button>
               <button onClick={handleCancelClickDelete} className='text-red-500 hover:text-red-600 transition duration-150'><MdCancel className='w-4 h-4 md:w-5 md:h-5' /></button>
             </div>
