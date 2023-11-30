@@ -1,0 +1,19 @@
+$spinner-size: 45px
+$spinner-color: #3b82f6
+$animation-duration: 1s
+
+@keyframes spin
+  to
+    transform: rotate(0deg)
+
+  from
+    transform: rotate(360deg)
+
+.spinner
+  border: 4px solid $spinner-color
+  border-radius: 50%
+  border-bottom-color: #ffffff00
+  width: $spinner-size
+  height: $spinner-size
+  animation: spin $animation-duration linear infinite
+  margin: 50px auto
