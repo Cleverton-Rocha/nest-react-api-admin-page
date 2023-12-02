@@ -36,7 +36,7 @@ function Login() {
 
       if (response.ok) {
         const data = await response.json();
-        Cookies.set('token', data.access_token, { secure: true, sameSite: 'strict' });
+        Cookies.set('token', data.access_token, { secure: true, sameSite: 'strict', expires: 1 });
         setLoggedIn(true);
       }
 
