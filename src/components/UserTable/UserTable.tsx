@@ -35,7 +35,6 @@ function UserTable(props: UserTableProps) {
 
       if (!response.ok) {
         const data = await response.json();
-        console.log(data);
         window.alert(data.message);
       }
 
@@ -78,7 +77,6 @@ function UserTable(props: UserTableProps) {
 
       if (!response.ok) {
         const data = await response.json();
-        console.log(data);
         window.alert(data.message);
       }
 
@@ -130,7 +128,6 @@ function UserTable(props: UserTableProps) {
 
       if (!response.ok) {
         const data = await response.json();
-        console.log(data);
         window.alert(data.message);
       }
 
