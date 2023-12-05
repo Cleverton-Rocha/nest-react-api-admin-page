@@ -5,7 +5,7 @@ function CreateProductForm() {
 
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
-  const [price, setPrice] = useState<number>();
+  const [price, setPrice] = useState<string>('');
   const [image, setImage] = useState<string>('');
   const [texture, setTexture] = useState<string>('');
   const [weight, setWeight] = useState<string>('');
@@ -20,7 +20,7 @@ function CreateProductForm() {
   };
 
   const handlePriceChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPrice(Number(e.target.value));
+    setPrice(e.target.value);
   };
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
