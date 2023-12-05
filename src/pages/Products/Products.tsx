@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import GoHome from '../../components/GoHome/GoHome';
 import Header from '../../components/Header/Header';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { RequireAuth } from '../../RequireAuth';
 import CreateProductForm from '../../components/CreateProductForm/CreateProductForm';
 import ProductTable from '../../components/ProductTable/ProductTable';
+import BackPage from '../../components/BackPage/BackPage';
 
 
 export interface Product {
   id: string;
   name: string;
   description?: string;
-  price: number;
+  price: string;
   image?: string;
   texture: string;
   weight: string;
@@ -64,7 +64,10 @@ function Products() {
     <>
       <Header />
       <div className='flex flex-col w-full h-screen mt-10 rounded-sm'>
-        <GoHome />
+        <BackPage
+          link='/home'
+          pageName='Home'
+        />
 
         <div className='flex w-full justify-around bg-white-500 p-4'>
           <div className='text-sm md:text-2xl font-medium bg-white-500'>

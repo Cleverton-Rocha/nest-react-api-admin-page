@@ -3,10 +3,10 @@ import { RequireAuth } from '../../RequireAuth';
 import Header from '../../components/Header/Header';
 import Cookies from 'js-cookie';
 import UserTable from '../../components/UserTable/UserTable';
-import GoHome from '../../components/GoHome/GoHome';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import CreateUserForm from '../../components/CreateUserForm/CreateUserForm';
 import EditPasswordForm from '../../components/EditPasswordForm/EditPasswordForm';
+import BackPage from '../../components/BackPage/BackPage';
 
 export interface User {
   id: string;
@@ -69,7 +69,10 @@ function Users() {
     <>
       <Header />
       <div className='flex flex-col w-full h-screen mt-10 rounded-sm'>
-        <GoHome />
+        <BackPage
+          link='/home'
+          pageName='Home'
+        />
 
         <div className='flex w-full justify-around bg-white-500 p-4'>
           <div className='text-sm md:text-2xl font-medium bg-white-500'>
